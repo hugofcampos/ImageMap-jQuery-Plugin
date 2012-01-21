@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<title>Image Map</title>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="imagemap.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#image').imageMap({
+					points:[
+						[
+							{x: 20, y: 142},
+							{x: 83, y: 40},
+							{x: 150, y: 142}	
+						],
+						[
+							{x: 157, y: 142},
+							{x: 287, y: 142},
+							{x:222, y: 41}	
+						],
+						[
+							{x: 290, y: 142},
+							{x: 428, y: 142},
+							{x:363, y: 41}	
+						]
+					], 
+					names:[
+						'primeiro',
+						'segundo',
+						'terceiro'
+					],
+					callback: function(ret){
+						//console.warn(ret);
+						jQuery('#result').html(ret);
+					}
+				});
+			});
+			
+			
+		</script>
+	
+	</head>
+	<body>
+		<img src="sample.jpg" id="image" />
+		<br />
+		<p id="result"></p>
+	</body>
+</html>
