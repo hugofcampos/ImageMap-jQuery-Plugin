@@ -48,7 +48,9 @@ jQuery.fn.imageMap = function(options) {
 					defaults.callback(defaults.names[inside]);			
 			}        
 		});		
-	});	
+	}).mouseleave(function(){
+		element.unbind('mousemove');
+    });	
 }
 
 function isPointInPoly(pt, polygons ){
